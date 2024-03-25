@@ -1,19 +1,27 @@
-CC	=	gcc -W -Wextra -Wall
-
-RM	=	rm -f
+SRC	=	src/main.c	\
+		src/commands.c	\
+		src/loop.c	\
+		src/init_info.c	\
+		src/simulation.c
 
 NAME	=	ai
 
-SRC	=	src/main.c
-
 OBJ	=	$(SRC:.c=.o)
+
+CFLAGS	=	-W -Wall -Wextra -g
+
+IFLAGS	=	-I./include
+
+LIB 	=	-L./lib/my -lmy
 
 all:	$(NAME)
 
-$(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ)
+$(NAME):
+	make -C lib/my
+	gcc -o $(NAME) $(SRC) $(CFLAGS) $(IFLAGS) $(LIB)
 
 clean:
+	make clean -C lib/my
 	$(RM) $(OBJ)
 
 fclean:	clean
