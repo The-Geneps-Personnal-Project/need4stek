@@ -8,16 +8,18 @@ void start_simulation(void) {
 
     run_command("START_SIMULATION\n");
     str = get_input();
+    fprintf(stderr, "%s\n", str);
     if (!str || !strcmp(str, "")) {
         fprintf(stderr, "Error: problem on get line\n");
         exit(84);
     }
     check_command = my_str_to_word_array(str, ':', 0, 0);
     if ((check_command[1] && strcmp(check_command[1], "OK") != 0) || !check_command[1]) {
+        fprintf(stderr, "Error: could not start simulation\n%s\n", str);
         my_free_tab(check_command);
-        fprintf(stderr, "Error: could not start simulation\n");
         exit(84);
     }
+    fprintf(stderr, "%s\n", str);
     free(str);
     my_free_tab(check_command);
     return;
