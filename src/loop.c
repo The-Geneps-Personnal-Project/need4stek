@@ -4,7 +4,9 @@
 void loop(void) {
     t_info info;
 
-    while (1) {
-        break;
+    info = init_info(info);
+    while (info.run) {
+        get_info(&info);
+        run_command_forward(info.speed);
     }
 }
