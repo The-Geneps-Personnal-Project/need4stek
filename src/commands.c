@@ -2,7 +2,13 @@
 
 // Run a command
 // Send a command to the need4stek API
-int run_command(const char* command) {
+void run_command(const char* command) {
     write(1, command, strlen(command));
-    return 0;
+    return;
+}
+
+void run_command_forward(float speed) {
+    write(1, "CAR_FORWARD:", 12);
+    dprintf(1, "%f\n", speed);
+    return;
 }
