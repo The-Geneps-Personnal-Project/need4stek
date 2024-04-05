@@ -31,4 +31,7 @@ void end_simulation(void);
 t_info init_info(t_info info);
 void get_info(t_info *info);
 
+void manage_speed(char ** data, t_info *info);
+// void manage_direction(char ** data, t_info *info);
+
 #endif // MY_H_

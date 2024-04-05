@@ -2,7 +2,8 @@ SRC	=	src/main.c	\
 		src/commands.c	\
 		src/loop.c	\
 		src/info.c	\
-		src/simulation.c
+		src/simulation.c	\
+		src/speed.c
 
 NAME	=	ai
 

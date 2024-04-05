@@ -25,6 +25,8 @@ void get_info(t_info *info) {
         get_info(info);
     fprintf(stderr, "%s\n", str);
     check_finish(tab, info);
+    manage_speed(tab, info);
+    // manage_direction(tab, info);
     my_free_tab(tab);
     free(str);
     return;
@@ -33,7 +35,7 @@ void get_info(t_info *info) {
 // Initialize the info structure
 t_info init_info(t_info info) {
     info.run = true;
-    info.speed = 0.5;
+    info.speed = 0.1;
     info.slow = 0.0;
     info.turn = 0.0;
     info.end = 0.0;
