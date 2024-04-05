@@ -28,5 +28,6 @@ void start_simulation(void) {
 // End the simulation
 // This function is called once at the end of the simulation
 void end_simulation(void) {
+    fprintf(stderr, "End of simulation\n");
     run_command("END_SIMULATION\n");
 }
